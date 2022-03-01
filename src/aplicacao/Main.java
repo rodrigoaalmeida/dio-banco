@@ -34,6 +34,7 @@ public class Main {
 			System.out.println("Para uma operção escolha o menu abaixo e digite:");
 			System.out.println("1 - Para conta Corrente");
 			System.out.println("2 - Para conta Poupanca");
+			System.out.println("0 - Para sair do programa");
 			controle = leitor.nextInt();
 			
 			if (controle == 1 || controle == 2) {

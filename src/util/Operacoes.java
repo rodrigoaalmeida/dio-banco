@@ -22,6 +22,7 @@ public class Operacoes {
 				System.out.println("4 - Para saque");
 				System.out.println("5 - Para transferencia");
 				System.out.println("6 - Para extrato");
+				System.out.println("0 - Para voltar ao menu de contas");
 				controle = leitor.nextInt();
 
 				switch (controle) {
