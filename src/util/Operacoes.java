@@ -17,7 +17,7 @@ public class Operacoes {
 		int controle = 1;
 
 			while (controle != 0) {
-				System.out.println("Para uma operção escolha o menu abaixo e digite:");
+				System.out.println("Para uma opercao escolha o menu abaixo e digite:");
 				System.out.println("3 - Para deposito");
 				System.out.println("4 - Para saque");
 				System.out.println("5 - Para transferencia");

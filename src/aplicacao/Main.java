@@ -21,9 +21,11 @@ public class Main {
 		
 		Conta cc = new ContaCorrente();		
 		Conta poupanca = new ContaPoupanca();
+		Conta conta;
 		int controle = 1;
 		
 		List<Conta> tipoConta = new ArrayList<>();
+		List<Conta> contas = new ArrayList<>();
 		
 		tipoConta.add(null);
 		tipoConta.add(cc);
@@ -31,13 +33,40 @@ public class Main {
 		
 		while(controle != 0) {
 			System.out.println(" === Bem vindo ao Banco Aqui! === ");
-			System.out.println("Para uma operção escolha o menu abaixo e digite:");
+			System.out.println("Para uma opercao escolha o menu abaixo e digite:");
 			System.out.println("1 - Para conta Corrente");
 			System.out.println("2 - Para conta Poupanca");
+			System.out.println("9 - Para criar uma conta");
 			System.out.println("0 - Para sair do programa");
 			controle = leitor.nextInt();
+
+			switch(controle){
+				case 1:
+				case 2:
+				case 9:
+					int escolhaTipoConta = 0;
+					System.out.println("Para uma opercao escolha o menu abaixo e digite:");
+					System.out.println("0 - Para criar uma Conta Corrente");
+					System.out.println("1 - Para criar uma Conta Poupanca");
+					escolhaTipoConta = leitor.nextInt();
+
+					if(escolhaTipoConta == 0){
+						contas.add(conta = new ContaCorrente(escolhaTipoConta));
+					}
+					else if(escolhaTipoConta == 1){
+						contas.add(conta = new ContaPoupanca(escolhaTipoConta));
+					}
+					else {
+						System.out.println("Operacao invalida");
+					}
+				case 0:
+					System.out.println("Obrigado");
+					break;
+				default:
+					break;
+			}
 			
-			if (controle == 1 || controle == 2) {
+			if (controle == 1 || controle == 2 || controle == 9) {
 				int antControle;
 				if(controle == 1) {
 					antControle = 2;

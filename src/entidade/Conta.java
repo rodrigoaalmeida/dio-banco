@@ -6,10 +6,12 @@ public abstract class Conta {
 	
 	protected int agencia;
 	protected int numero;
+	protected int tipoConta;
 	protected double saldo;
 	
-	public Conta() {
+	public Conta(int tipoConta) {
 		this.agencia = AGENCIA_PADRAO;
+		this.tipoConta = tipoConta;
 	}
 	
 	public int getAgencia() {
@@ -17,6 +19,9 @@ public abstract class Conta {
 	}
 	public int getNumero() {
 		return numero;
+	}
+	public int getTipoConta() {
+		return tipoConta;
 	}
 	public double getSaldo() {
 		return saldo;
@@ -52,6 +57,7 @@ public abstract class Conta {
 	public void imprimirExtrato() {
 		System.out.println(String.format("Agencia: %d", this.agencia));
 		System.out.println(String.format("Numero: %d", this.numero));
+		System.out.println(String.format("Tipo da conta: %d", this.numero));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
 	}
 }
