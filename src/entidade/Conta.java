@@ -3,7 +3,6 @@ package entidade;
 public abstract class Conta {
 	
 	private static final int AGENCIA_PADRAO = 1;
-	private static int SEQUENCIAL = 1;
 	
 	protected int agencia;
 	protected int numero;
@@ -11,7 +10,6 @@ public abstract class Conta {
 	
 	public Conta() {
 		this.agencia = AGENCIA_PADRAO;
-		this.numero = SEQUENCIAL++;
 	}
 	
 	public int getAgencia() {
@@ -32,7 +30,7 @@ public abstract class Conta {
 			saldo -= valor;
 			imprimirExtrato();
 		} else {
-			System.out.println("O saldo seu saldo é insuficiente para esta transacao!!");
+			System.out.println("O saldo seu saldo Ã© insuficiente para esta transacao!!");
 			System.out.printf("Saldo atual em conta e: R$ %.2f%n", getSaldo());
 		}
 	}
