@@ -3,22 +3,24 @@ package entidade;
 public abstract class Conta {
 	
 	private static final int AGENCIA_PADRAO = 1;
+	private static int GERADORNUMEROCONTA = 1;
 	
 	protected int agencia;
-	protected int numero;
+	protected int numeroConta;
 	protected int tipoConta;
 	protected double saldo;
 	
 	public Conta(int tipoConta) {
 		this.agencia = AGENCIA_PADRAO;
+		this.numeroConta = GERADORNUMEROCONTA++;
 		this.tipoConta = tipoConta;
 	}
 	
 	public int getAgencia() {
 		return agencia;
 	}
-	public int getNumero() {
-		return numero;
+	public int getnumeroConta() {
+		return numeroConta;
 	}
 	public int getTipoConta() {
 		return tipoConta;
@@ -56,8 +58,8 @@ public abstract class Conta {
 	
 	public void imprimirExtrato() {
 		System.out.println(String.format("Agencia: %d", this.agencia));
-		System.out.println(String.format("Numero: %d", this.numero));
-		System.out.println(String.format("Tipo da conta: %d", this.numero));
+		System.out.println(String.format("numeroConta: %d", this.numeroConta));
+		System.out.println(String.format("Tipo da conta: %d", this.numeroConta));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
 	}
 }
